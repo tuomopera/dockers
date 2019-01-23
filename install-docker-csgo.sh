@@ -11,6 +11,7 @@ CHECK_COMPOSE_VERSION=$(docker-compose version | grep docker-compose | awk '{pri
 
 ### Docker
 if [[ $CHECK_DOCKER_VERSION -ge "0" ]]; then
+##If version returns anything higher than 0 -- Docker present
 	echo "Docker CE located, skipping install."
 else 
 	echo "Docker CE not found, installing."
@@ -22,10 +23,10 @@ else
 fi
 
 ###Docker Compose
+##If version returns anything higher than 0 -- Compose present
 if [[ $COMPOSE_RESULT -ge "0" ]]; then
         echo "Docker Compose located, skipping install."
 else
-	echo "menikin else"
 	yum install epel-release
 	yum install -y python-pip
 	pip install docker-compose
