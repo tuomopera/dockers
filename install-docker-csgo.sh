@@ -2,8 +2,9 @@
 
 ## Author: <Peke> miikamoilanen@outlook.com 
 ## Script to install basic Docker CE and Docker-compose 
+## Meant for RPM based installations
 ## Install dependencies 
-#Docker
+## Docker
 
 
 CHECK_DOCKER_VERSION=$(docker version | grep Version | cut -d':' -f 2 | awk '{print $1}' | sort -u | cut -d'.' -f 1)
