@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Author: <Peke> miikamoilanen@outlook.com 
-## Script to install basic Docker CE and Docker-compose 
+## Script to install basic Docker CE and Docker-compose
 ## Meant for RPM based installations
 ## Install dependencies 
 ## Docker
@@ -34,3 +34,17 @@ else
 	yum upgrade python*
 fi
 
+
+### CS:GO files based on crazy-max/csgo-server-launcher/ - big thanks <3 
+	read -p 'Install CS:GO Dedicated server? (Y/N): ' yesno
+if [[ $yesno == *"y"* ]];then
+	echo "Installing CSGO dedicated server"
+	mkdir -p /etc/csgo/
+	cp csgo-compose/* /etc/csgo
+	echo "Installing CS:GO... Will take time, opening logs for you!"
+	cd /etc/csgo	
+	docker-compose up -d 
+#	docker-compose logs -f
+else
+	echo "Bye"
+fi
