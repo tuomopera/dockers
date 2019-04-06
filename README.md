@@ -1,4 +1,5 @@
-# dockers
+# Scripty stuff
 
 
-Docker training! There's gonna stuff here. 
+Handy scripty stuff goes here
+
